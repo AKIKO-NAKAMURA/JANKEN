@@ -1,0 +1,57 @@
+/* ヘッダー */
+html 
+    /* 横幅 */ {
+  width: 960px;
+  /* 高さ */
+  height: auto;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+}
+
+header {
+  display: flex;
+  /* 背景色 */
+  background-color: rgb(213, 181, 197);
+  /* 下線 */
+  border-bottom: 1px solid rgb(186, 123, 123);
+  /* 文字の位置 */
+  height: 300px;
+  width: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+/* メイン */
+
+
+.janken-box{
+  display: flex;
+    width: 100%; /* 領域の幅を指定 */
+    height: 200px; /* 領域の高さを指定 */
+    background-color: rgba(255, 168, 153, 0.718);
+}
+
+.janken-section{
+  display: flex;
+}
+.janken_contents{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+/* .img{
+  display: list-item;
+  
+  height: 100px;
+  width: 100px;
+} */
+
+
+/* ジャンケン画像 */

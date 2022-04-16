@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sample.css" />
+    <title>じゃんけん</title>
+  </head>
+
+  <!-- ボディー：メインの記述を書くところ -->
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <div class="header_img">
+      <!-- <h1>じゃんけん</h1> -->
+      <img src="img/logo.png" width="auto" height="300px"style="display: block; margin: auto;">
+      </div>
+    </header>
+
+    <!-- メイン -->
+ <main>
+    <div class="janken-box">
+      <ul class="janken-section">
+          <div class="janken_contents">
+            <li id="gu_btn"><img src="img/gu2.jpg" alt="gu_btn"></li>
+          </div> 
+          <div class="janken_contents">
+            <li id="cho_btn"><img src="img/choki2.jpg"alt="cho_btn"></li>
+          </div>
+          <div class="janken_contents">
+            <li id="par_btn"><img src="img/paa2.jpg"alt="par_btn"></li>
+          </div>
+        </ul>
+      </div>
+       
+      <div id="com_hand">コンピュータの出した手は？</div>
+      <div id="result">結果は？</div>
+      <div id="result2"></div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      //ぐー
+
+      $("#gu_btn").on("click", function (){ //id:gu_btnが割り当てられてる要素をクリックした時に動作
+        const min = 0; //最小値を表す変数minに０を入れる
+        const max = 3;　//最大値を表す変数maxに３を入れる
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        //変数ランダムナンバー乱数（乱数を生成するメゾット×最小値を表す変数Max-最小値を表す変数
+       console.log(randomNumber);//randomnamberを出力する
+        if (randomNumber === 0) {//生成された変数がもし０なら
+          $("#result").text("チョキ 負け");//#resultにチョキ（負け）が表示される
+        } else if (randomNumber === 1) {///複数分岐（生成された変数が１なら）
+          $("#result").text("グー　あいこ");//#resultにグー（あいこ）が表紙される
+        } else if (randomNumber === 2) {//複数分岐（生成された変数が２なら）
+          $("#result").text("パー　負け");//#resultにパー（負け）が出る
+        }　else if  (randomNumber === 3) {//複数分岐（生成された変数が３なら）
+          $("#result").text("チョキ　負け");//3が出たらチョキが出る
+        }
+      });
+
+      //チョキ
+
+      $("#cho_btn").on("click", function () {
+        const min = 0;
+        const max = 3;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(randomNumber);
+        if (randomNumber === 0) {
+          $("#result").text("チョキ　あいこ");
+        } else if (randomNumber === 1) {
+          $("#result").text("グー　負け");
+        } else if (randomNumber === 2) {
+          $("#result").text("パー　勝ち");
+        } else if (randomNumber < 3) {
+          $("#result").text("グー　負け");
+        }
+      });
+
+      //パー
+
+      $("#par_btn").on("click", function () {
+        const min = 0;
+        const max = 3;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(randomNumber);
+        if (randomNumber === 0) {
+          $("#result").text("チョキ　勝ち");
+        } else if (randomNumber === 1) {
+          $("#result").text("グー");
+        } else if (randomNumber === 2) {
+          $("#result").text("パー");
+        } else if (randomNumber < 3) {
+          $("#result").text("グー");
+        }
+      });
+    </script>
+
+    <!-- フッター -->
+    <footer></footer>
+  </body>
+</html>

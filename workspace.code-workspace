@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "01_js_omikuji_sample",
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "01_js_omikuji_sample"
+  }
+}

@@ -1,0 +1,270 @@
+/* 全体 */
+html{
+  width: auto;
+  height: auto;
+}
+body{
+		margin: 0 auto;
+		background-color: #9bd6e9;
+		background-image: url("/backimg/kumo.png"), url("/backimg/kumo2.png");
+		animation: cloudMove 8s infinite;
+    box-sizing: border-box;
+    width: 960px;
+}
+/* 全体の文字フォント */
+.family{	
+font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', 
+sans-serif;
+}
+
+/* 背景 */
+#main-img {
+		width: 600px;
+		margin: 0 auto;
+		background-color: #9bd6e9;
+		background-image: url("/backimg/kumo.png"), url("/backimg/kumo2.png");
+		animation: cloudMove 8s infinite;
+   box-sizing: border-box;
+	}
+
+	
+
+/* ヘッダー */
+header{
+	width: auto;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+  text-align: center;
+	
+}
+header img{
+	width: 900px;
+	height: auto;
+}
+
+
+/* 音楽再生ボタン */
+.btn_box{
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	margin: 20px;
+	
+}
+
+.btns img{
+	height: 100px;
+	width: 100px;
+}
+
+/* リンク */
+.btn-img{
+  border-style: none;
+}
+/* マウスを乗せたときの動き */
+.btn-img img{
+  width: 110px;
+  height: auto;
+}
+
+
+
+/* じゃんけんをするテキストBOX */
+section{
+  height: 150px;
+	display: flex;
+  justify-content: center;
+}
+.section-contents{
+	padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #ffeaea;
+    box-shadow: 0px 0px 0px 10px #ffeaea;
+    border: dashed 2px #ffc3c3;
+    border-radius: 8px;
+	width: 300px;
+	height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.family{
+	font-size: 30px;
+}	
+/* メイン */
+.box{
+  display: flex;
+  width: 960px;
+  height: 450px;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+/* 相手の手テキスト */
+.dealer{
+  width: 300px;
+  height: auto;
+}
+.dealer img{
+  width: 280px;
+  height: auto;
+}
+
+.dealer-p{
+	font-size: 20px;
+	background: linear-gradient(transparent 50%, #fffbb8 0%);
+    line-height: 10px;
+	color: rgb(255, 85, 85);
+  -webkit-text-stroke: 1px rgb(78, 78, 78);
+  font-weight: 50px;
+  width: 200px;
+}
+/* 結果 */
+.maru-box{
+  display: flex;
+  flex-flow: column;
+align-items: center;
+width: 300px;
+}
+
+.maru {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-flow: column; 
+  vertical-align: top;
+}
+/* 円の大きさ */
+.size_normal{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: #000;
+}
+/* 文字の大きさ */
+.letter3 {
+  font-size: 30px;
+  line-height: 1.5em;
+}
+/* 円と文字の色 */
+.pink1 {
+  color: rgb(115, 40, 40);
+  border: 4px solid rgb(255, 51, 85);
+  background-color: #f9eaea;
+}
+/* 自分の手 */
+
+.player{
+	display: flex;
+	width: 300px;
+	height: auto;
+  flex-flow: column;
+  align-items: center;
+}
+
+.player img{
+  flex-direction: column;
+	height: 120px;
+  width: 120px;
+	margin: 5px;
+}
+
+/* 結果 */
+.result{
+	font-size: 30px;
+  text-align: center;
+  -webkit-text-stroke: 3px#ff4646;
+  color: rgb(255, 0, 0);
+}
+
+/* もう一度遊ぶボタン */
+#resetButton.hidden{
+ align-items: center;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-border {
+  padding: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 2px solid #000;
+  background: -webkit-radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%),
+    -webkit-radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%), #fc0;
+  background: radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%),
+    radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%), #fc0;
+  background-position: 0 0, 6px 6px;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: 12px 12px;
+}
+
+a.btn-border span {
+  position: relative;
+  display: block;
+  padding: 1.25rem 3rem;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+a.btn-border:hover {
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+}
+
+/* フッター */
+
+footer{
+	background-color: #ffc3c3;
+	width: auto;
+	height: 40px;
+}
+
+.pl{
+font-size: 30px;
+text-align: end;
+
+}
+	@keyframes cloudMove {
+		0% {background-position: 0 0, 0 0;}
+		50% {background-position: 40px 0, 80px 0;}
+		100% {background-position: 0 0, 0 0;}
+	}
