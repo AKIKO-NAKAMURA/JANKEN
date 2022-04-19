@@ -1,33 +1,38 @@
 "use strict";
 
-{
-
- 
+ {
   class GameMaster{ //ゲームの進行用のクラス
-    constructor(){
+    constructor() {
       this.init(); //初期化
 
-      this._opponent=new Opponent(DEALER_TAG,JANKEN_TYPE) //相手
+      this._opponent = new Opponent(DEALER_TAG, JANKEN_TYPE) //相手
  
       //プレイヤー側のじゃんけんのアイコンの表示
-      this._player=new Array(3);
-       for(let i=0;i<this._player.length;i++){
-          this._player[i]=document.createElement("img");
-          this._player[i].src="img/"+JANKEN_TYPE[i]+".jpg";
-          PLAYER_TAG.appendChild(this._player[i]);
+      this._player = new Array(3);
+      for (let i = 0; i < this._player.length; i++) {
+        this._player[i] = document.createElement("img");
+        this._player[i].src = "img/" + JANKEN_TYPE[i] + ".jpg";
+        PLAYER_TAG.appendChild(this._player[i]);
 
-          this._player[i].addEventListener("click",()=>{
-            this.click(JANKEN_TYPE[i]); //プレイヤー側のアイコンがクリックされた時に動作するメソッド
-          });
+        this._player[i].addEventListener("click", () => {
+          this.click(JANKEN_TYPE[i]);//プレイヤー側のアイコンがクリックされた時に動作するメソッド   
+        });
       }
 
       this._opponent.shuffleImage(); //相手のアイコンをシャッフルする
 
-      RESET_BUTTON.addEventListener("click",()=>{ //リセットボタンが押された時の処理
-        this._opponent.shuffleImage();
-        this.init();
-      });
-    }
+
+        // リセットボタン
+
+        RESET_BUTTON.addEventListener("click", ()=> { //リセットボタンが押された時の処理
+          this._opponent.shuffleImage();
+          this.init();
+            let sound = new Audio("/music/janken.mp3");
+              sound.play();
+        });
+      }
+      
+
 
     init(){ //初期化
       RESULT.textContent="";
@@ -65,26 +70,30 @@
       },20); //50fps
     }
 
-    result(clickType){ //じゃんけんの結果判定
-      let _dealerType=JANKEN_TYPE[this._rdNum];
+    result(clickType) { //じゃんけんの結果判定
+
+      // クリックすると音楽を流す
+      let sound = new Audio("/music/pon2.mp3");
+      sound.play();
+      let _dealerType = JANKEN_TYPE[this._rdNum];
 
       switch(clickType){
         case "rock": //グーをクリックした場合
           if(_dealerType === "rock"){
-            RESULT.textContent="引き分け";
+            RESULT.textContent="あいこ";
           }else if(_dealerType === "scissors"){
             RESULT.textContent="勝ち！";
-          }else{
+          }else if(_dealerType === "paper"){
             RESULT.textContent="負け";
           }
           break;
 
         case "scissors": //チョキをクリックした場合
           if(_dealerType === "rock"){
-            RESULT.textContent="負け";
+            RESULT.textContent="あいこ";
           }else if(_dealerType === "scissors"){
             RESULT.textContent="引き分け";
-          }else{
+          }else if(_dealerType === "paper"){
             RESULT.textContent="勝ち！";
           }
           break;
@@ -94,14 +103,15 @@
             RESULT.textContent="勝ち！";
           }else if(_dealerType === "scissors"){
             RESULT.textContent="負け";
-          }else{
-            RESULT.textContent="引き分け";
+          }else　if(_dealerType === "paper"){
+            RESULT.textContent="あいこ";
           }
           break;
 
         default:
           console.log("タイプなし");
           break;
+
       }
     }
   }
@@ -126,16 +136,8 @@ function play(){
   const PLAYER_TAG=document.querySelector(".player"); //タグの取得
   const RESET_BUTTON=document.getElementById("resetButton"); //タグの取得
   const RESULT=document.querySelector(".result"); //タグの取得
-
   const JANKEN_TYPE=["rock","scissors","paper"]; //じゃんけんタイプの配列
 
   const gameMaster=new GameMaster(); //ゲームの進行用のクラスのインスタンスの生成
 }
-    window.onload = function() {
-        var my_audio = new Audio("サウンドファイルのURL");
-            //ボタンにクリックイベントを設定
-            document.getElementById("btn20200502").onclick = function() {
-                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                my_audio.play();  //サウンドを再生
-            }
-    }
+  
