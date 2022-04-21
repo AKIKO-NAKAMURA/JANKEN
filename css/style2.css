@@ -1,0 +1,79 @@
+
+html {
+    width: auto;
+    height: auto;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    
+}
+
+
+/* シャッフルする画像 */
+p.shuffle2{
+display: flex;
+text-align: center;
+justify-content: center;
+height: 500px;
+}
+
+img{
+    height: 450px;
+}
+
+
+
+/* ドキンちゃんボタン */
+p{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dkn-btn {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 9px 9px #ff4d4d;
+    cursor: pointer;
+    transition: .2s;
+ 
+}
+button.dkn-btn:hover {
+    box-shadow: none;
+    animation: buttonAnime 1s ease;
+}
+
+
+/* 吹き出し */
+.balloon {
+    position: relative;
+    padding: 10px;
+    background-color: rgba(255, 102, 255, 0.64);
+    width: 300px;
+    height: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.balloon:after {
+    border-bottom: 20px solid rgba(255, 102, 255, 0.64);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: -20px;
+    left: 64%;
+    content: "";
+    position: absolute;
+}
+
+
+/* ドキンボタンのアニメーション */
+@keyframes buttonAnime {
+    0% {
+        transform: rotateY(360deg)
+    }
+}

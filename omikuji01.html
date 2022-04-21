@@ -4,36 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おみくじ練習</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <title>おみくじ</title>
+  <link href="/css/style2.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<p class="shuffle2"><img src="img/default.png" alt="なにがでるかな"></p>
-<p><button>Start!</button></p>
+<p class="shuffle2">
+  <img src="/img/btm.png" alt="回したい"></p>
+  
+  <p>
+  <button class="dkn-btn">
+  <img src="/dknbtn.jpeg" class="dkn-btn">
+</button>
+</p>
+ <p class="balloon">食パンまんさまに会いたいわ〜</p>
 
-  <footer>フッター</footer>
+
+
+
   <!-- 🔽 ここで読み込み 🔽 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  <script>
-    // 自分で書いた処理
-
-  </script>
-
-  <script>
-    // ここに処理を追加
+   <script>
   const array = [
-    '<img src="img/furit_mark02_melon.png" alt="メロン">',
-    '<img src="img/furit_mark04_orange.png" alt="オレンジ"> ',
-    '<img src="img/furit_mark09_kiwi.png" alt="キューイ">',
-    '<img src="img/furit_mark10_pineapple.png" alt="パイナップル">',
-    '<img src="img/furit_mark11_ichigo.png" alt="いちご">',
-    '<img src="img/furit_mark14_suika.png" alt="スイカ"> ',
-    '<img src="img/furit_mark17_cherry.png" alt="さくらんぼ">',
-    '<img src="img/furit_mark18_mikan.png" alt="みかん">',
-    '<img src="img/kuji_ken1_ooatari.png" alt="大当たり">',
-    '<img src="img/kuji_ken2_atari.png" alt="当たり">'
+    '<img src="/img-omikuji/s1.png" alt="">',
+    '<img src="/img-omikuji/s2.png" alt=""> ',
+    '<img src="/img-omikuji/s3.png" alt="">',
+    '<img src="/img-omikuji/S4.png" alt="">',
+    '<img src="/img-omikuji/s5.png" alt="">',
+    '<img src="/img-omikuji/s6.png" alt="">',
   ]
   const shuffle = ([...array]) => {
     for (let i = array.length - 1; i >= 0; i--) {
@@ -70,6 +68,7 @@
       }
     });
   });
+
   </script>
 </body>
 
