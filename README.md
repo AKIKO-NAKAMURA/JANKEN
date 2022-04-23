@@ -1,4 +1,4 @@
-[https://akiko-nakamura.github.io/JANKEN/]
+[https://akiko-nakamura.github.io/JANKEN/janken2.html
 
 # じゃんけんアンパンマン
 
